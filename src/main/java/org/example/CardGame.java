@@ -21,10 +21,10 @@ public abstract class CardGame {
         }
     }
 
-    public static Card dealCard() {
-        Card dealtCard = deckOfCards.get(0);
-        deckOfCards.remove(0);
-        System.out.println(dealtCard);
+    public static Card dealCard(ArrayList<Card> cardDeck) {
+        Card dealtCard = cardDeck.get(0);
+        cardDeck.remove(0);
+//        System.out.println(dealtCard);
         return dealtCard;
     }
 
@@ -38,14 +38,5 @@ public abstract class CardGame {
 
     public static void shuffleDeck() {
         Collections.shuffle(deckOfCards);
-    }
-
-    public static void main(String[] args) {
-        createDeck();
-        sortDeckInNumberOrder();
-        getDeck();
-        sortDeckIntoSuits();
-        getDeck();
-        System.out.println(dealCard());
     }
 }
