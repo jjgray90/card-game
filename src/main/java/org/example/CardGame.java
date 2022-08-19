@@ -72,7 +72,7 @@ public abstract class CardGame {
                 System.err.println("Please enter at least one player");
                 continue;
             }
-            playerList.add(new Player(input, new ArrayList<>()));
+            playerList.add(new Player(input));
         }
     }
 }

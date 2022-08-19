@@ -30,7 +30,6 @@ public class Snap extends CardGame {
         Player currentPlayer = playerList.get(playerIndex);
 
 
-        gameLoop:
         while (true) {
 
             getInput(currentPlayer.getName() + "'s turn");
@@ -38,7 +37,7 @@ public class Snap extends CardGame {
             System.out.println(currentCard);
 
             if (checkWin(currentCard, previousCard)) {
-                break gameLoop;
+                break;
             }
             previousCard = currentCard;
 

@@ -7,33 +7,21 @@ public class Player {
     protected String name;
     protected ArrayList<Card> hand;
 
-    public Player(String name, ArrayList<Card> hand) {
+    public Player(String name) {
         this.name = name;
-        this.hand = hand;
+        this.hand = new ArrayList<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ArrayList<Card> getHand() {
         return hand;
     }
 
-    public void setHand(ArrayList<Card> hand) {
-        this.hand = hand;
-    }
-
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Player{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", hand=").append(hand);
-        sb.append('}');
-        return sb.toString();
+        return "Player{" + "name='" + name + '\'' + ", hand=" + hand + '}';
     }
 }
