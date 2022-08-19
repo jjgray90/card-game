@@ -1,39 +1,29 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Date;
 
 public class Snap extends CardGame {
 
-    public static void getInput(String message) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println(message);
-        scan.nextLine();
-    }
+    public boolean checkWin(Card currCard, Card prevCard) {
 
-    public static void dealCards(ArrayList<Player> playerList) {
-        createDeck();
-        shuffleDeck();
-        int deckLength = deckOfCards.size();
+        if (prevCard != null && (currCard.getValue() == prevCard.getValue())) {
+            long startTime = System.currentTimeMillis();
+            long elapsedTime = (new Date()).getTime() - startTime;
+            String input = getInput(null);
 
-        for (int i = 0; i < (deckLength / playerList.size()); i++) {
-            for (Player player : playerList) {
-                player.getHand().add(dealCard(deckOfCards));
-            }
+            if (input.equalsIgnoreCase("snap") && elapsedTime < 3_000) {
+                System.out.println("SNAP!");
+                return true;
+            } else System.out.println("Too slow");
         }
+        return false;
     }
-
-    public static boolean checkWin(Card currentCard, Card previousCard) {
-        return previousCard != null && (currentCard.getValue() == previousCard.getValue());
-    }
-
 
     public void playGame() {
+        System.out.println("Welcome to snap! Enter player names. When all players have been entered, press enter to start game.");
+
         Card previousCard = null;
-        ArrayList<Player> playerList = new ArrayList<>();
-        playerList.add(new Player("JJ", new ArrayList<>()));
-        playerList.add(new Player("Charlie", new ArrayList<>()));
-        playerList.add(new Player("Trevor", new ArrayList<>()));
+        addPlayers();
         dealCards(playerList);
 
         int playerIndex = 0;
@@ -48,7 +38,6 @@ public class Snap extends CardGame {
             System.out.println(currentCard);
 
             if (checkWin(currentCard, previousCard)) {
-                System.out.println("SNAP! " + currentPlayer.getName() + " wins");
                 break gameLoop;
             }
             previousCard = currentCard;
