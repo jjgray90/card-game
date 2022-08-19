@@ -34,14 +34,19 @@ public class Card {
         }
 
         return
-                "\u001b[47m  " + colour + this.symbol + "            \u001b[0m\n"
+                "\u001b[47m                \u001b[0m\n"
+                        + "\u001b[47m  " + colour + this.symbol + "            \u001b[0m\n"
 
                         + "\u001b[47m  " + colour + this.suit + "             \u001b[0m\n"
                         + "\u001b[47m                \u001b[0m\n"
+                        + "\u001b[47m                \u001b[0m\n"
                         + "\u001b[47m       " + colour + this.suit + "        \u001b[0m\n"
+                        + "\u001b[47m                \u001b[0m\n"
                         + "\u001b[47m                \u001b[0m\n"
                         + "\u001b[47m             " + colour + this.suit + "  \u001b[0m\n"
                         + "\u001b[47m             " + colour + this.symbol + " \u001b[0m\n"
+                        + "\u001b[47m                \u001b[0m\n"
+
                 ;
     }
 
