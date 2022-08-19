@@ -1,4 +1,5 @@
 # card-game
+<img width="454" alt="Screenshot 2022-08-19 at 17 01 40" src="https://user-images.githubusercontent.com/59710385/185661368-9f3d467a-2b1b-44ed-a9b5-b74d637947a3.png">
 
 A simple snap game programme built in java. 
 
